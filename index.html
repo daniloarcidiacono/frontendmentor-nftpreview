@@ -3,31 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
   <title>Frontend Mentor | NFT preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="styles/main.css">  
+  <link rel="stylesheet" href="styles/card.css">
+  <link rel="stylesheet" href="styles/attribution.css">
 </head>
-<body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
-  <div class="attribution">
+<body>  
+  <main class="container">
+    <figure class="card">
+      <section class="card__imagecontainer">
+        <img class="card__image" src="images/image-equilibrium.jpg" alt="Equilibrium">
+        <div class="card__overlay">
+          <img class="card__overlayicon" src="images/icon-view.svg" alt="View">
+        </div>
+      </section>
+      <h1 class="card__title">Equilibrium #3429</h1>
+      <h2 class="card__description">Our Equilibrium collection promotes balance and calm.</h2>
+      <section class="card__info">
+        <div class="card__price">
+          <img class="card__priceicon" src="images/icon-ethereum.svg">
+          <span class="card__pricetext">0.041 ETH</span>
+        </div>
+        <div class="card__expiration">
+          <img class="card__expirationicon" src="images/icon-clock.svg">
+          <span class="card__expirationtext">3 days left</span>
+        </div>
+      </section>
+      <hr class="card__separator" />
+      <section class="card__footer">
+        <img class="card__footeravatar" src="images/image-avatar.png">
+        <span class="card__footertext">
+          Creation of <span class="card__footertext--author">Jules Wyvern</span>
+        </span>
+      </section>      
+    </figure>
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://github.com/daniloarcidiacono" target="_blank">Danilo Arcidiacono</a>.
+  </footer>
 </body>
 </html>
