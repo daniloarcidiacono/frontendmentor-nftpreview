@@ -22,15 +22,16 @@
 // Mixins for common styling
 @mixin card-info($icon-size, $text-color) {
     &icon {
-        vertical-align: middle;    
         width: ddpx($icon-size);
+        vertical-align: middle;    
     }
     
     &text {
         @include text-normal();
-        color: $text-color;
+
         margin-left: 0.15rem;    
         vertical-align: middle;            
+        color: $text-color;
     }
 }
 
@@ -54,14 +55,8 @@
     box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.15);
 
     &__preview {
-        cursor: pointer;
         position: relative;
-
-        &:hover {
-            .card__previewoverlay {
-                opacity: 1;
-            }
-        }
+        cursor: pointer;
 
         &image {
             display: block;        
@@ -85,6 +80,10 @@
             &icon {
                 width: ddpx(48);
                 margin: auto;    
+            }
+
+            .card__preview:hover & {
+                opacity: 1;
             }
         }    
     }
@@ -145,12 +144,12 @@
         
         &text {
             color: var(--color-soft-blue);
-        }
-        
-        &text--author {
-            @include hoverable();
 
-            color: var(--color-white);
-        }    
+            &--author {
+                @include hoverable();
+
+                color: var(--color-white);    
+            }
+        }
     }
 }
