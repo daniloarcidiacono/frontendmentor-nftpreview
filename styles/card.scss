@@ -1,0 +1,156 @@
+// Function utilities
+@function ddpx($pixels) {    
+    @return calc($pixels * var(--ddpx));
+}
+
+// Mixins for typography
+@mixin text-normal() {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-normal);
+}
+
+@mixin text-semibold() {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+@mixin text-light() {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-light);
+}
+
+// Mixins for common styling
+@mixin card-info($icon-size, $text-color) {
+    &icon {
+        vertical-align: middle;    
+        width: ddpx($icon-size);
+    }
+    
+    &text {
+        @include text-normal();
+        color: $text-color;
+        margin-left: 0.15rem;    
+        vertical-align: middle;            
+    }
+}
+
+@mixin hoverable() {
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-cyan);
+    }
+}
+
+// Card styling
+.card {
+    box-sizing: border-box;
+    max-width: ddpx(326);
+    margin: auto;
+    padding: 1.2rem;
+    border-radius: 12px;
+
+    background-color: var(--color-dark-blue-02);
+    box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.15);
+
+    &__preview {
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            .card__previewoverlay {
+                opacity: 1;
+            }
+        }
+
+        &image {
+            display: block;        
+            width: 100%;
+            border-radius: 8px;
+        }
+    
+        &overlay {
+            position: absolute;
+            top: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+
+            background-color: var(--color-cyan-50);
+            opacity: 0;
+
+            transition: opacity 250ms ease-in-out 0s;
+    
+            &icon {
+                width: ddpx(48);
+                margin: auto;    
+            }
+        }    
+    }
+
+    &__title {
+        @include text-semibold();
+        @include hoverable();
+
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+        color: var(--color-white);
+    }
+
+    &__description {
+        @include text-light();
+
+        margin: 0.5rem 0;
+        line-height: 1.25rem;
+        color: var(--color-soft-blue);    
+    }
+
+    &__info {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;    
+
+        &price {
+            @include card-info(12, var(--color-cyan));
+        }
+    
+        &expiration {
+            @include card-info(16, var(--color-soft-blue));
+        }
+    }
+
+    &__separator {
+        margin: 0.75rem 0;    
+        border-style: solid;
+        border-top: none;
+        color: var(--color-dark-blue-03);
+    }
+
+    &__footer {
+        @include text-light();
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        &avatar {
+            width: ddpx(32);
+            border-radius: 100px;
+            outline: 1px solid white;
+        }
+        
+        &text {
+            color: var(--color-soft-blue);
+        }
+        
+        &text--author {
+            @include hoverable();
+
+            color: var(--color-white);
+        }    
+    }
+}

@@ -1,0 +1,63 @@
+:root {
+    // Colors
+    --color-soft-blue: hsl(215, 51%, 70%);
+    --color-cyan: hsl(178, 100%, 50%);
+    --color-cyan-50: hsl(178, 100%, 50%, 50%);
+    --color-dark-blue-01: hsl(217, 54%, 11%);
+    --color-dark-blue-02: hsl(216, 50%, 16%);
+    --color-dark-blue-03: hsl(215, 32%, 27%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-purple: hsl(228, 45%, 44%);
+    
+    // Font weights
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+
+    // window.devicePixelRatio on 100% zoom
+    --ddpx: 0.8px;
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url('../fonts/outfit/Outfit-Light.ttf');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url('../fonts/outfit/Outfit-Regular.ttf');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url('../fonts/outfit/Outfit-SemiBold.ttf');
+
+    // CSS custom properties do not work on @font-face rules!
+    // See https://stackoverflow.com/questions/58752373/custom-css-properties-in-font-face
+    font-weight: 600;
+}
+
+body {
+    background-color: var(--color-dark-blue-01);
+    font-family: Outfit; 
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QA/wD/AP+gvaeTAAAAT0lEQVQY042Pyw3AMAhDTdRBMlq6/xCvl6RCyEjxDfzMJ9QIINeDomNEREh622Tqr51dABbM0D+sghWyq4FpIXcjMK3fPVPBoUs9N1Ml6QM7Z23koDZy4QAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+}

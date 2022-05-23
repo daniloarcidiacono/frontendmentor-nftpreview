@@ -1,0 +1,28 @@
+{
+  "name": "nft-preview-card-component",
+  "version": "0.1.0",
+  "description": "Solution to the NFT preview card component challenge on Frontend Mentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-transpile": "sass styles:styles --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniloarcidiacono/frontendmentor-nftpreview.git"
+  },
+  "keywords": [
+    "NFT",
+    "Frontend",
+    "Mentor"
+  ],
+  "author": "Danilo Arcidiacono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniloarcidiacono/frontendmentor-nftpreview/issues"
+  },
+  "homepage": "https://github.com/daniloarcidiacono/frontendmentor-nftpreview#readme",
+  "devDependencies": {
+    "sass": "^1.50.1"
+  }
+}
